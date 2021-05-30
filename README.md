@@ -6,13 +6,12 @@ The Library uses quite "odd" naming style, but is a new standard I started apply
 
 ## All usage examples
 ```vb
-Set x = new IniFile
-x.Open "test.ini"
+Set ini = new IniFile
+ini.Open "test.ini"
 
 ' set/add values to ini
-x.SetValue "general", "key1", "value1"
-' then we assign new value
-x.SetValue "general", "key1", "value12"
+ini.SetValue "general", "key1", "value1"
+ini.SetValue "general", "key1", "value12"
 
 ' retrieve value by key "a" from section "general"
 WScript.Echo "Get value:" & vbNewLine & x.GetValue("general", "a")
@@ -20,7 +19,20 @@ WScript.Echo "Get value:" & vbNewLine & x.GetValue("general", "a")
 ' includes empty section name if there was no first section name
 WScript.Echo "Sections:" & vbNewLine & Join(x.GetSections(), ",")
 
-' we specify 0 to say just save file
-' we can add custom filename, yes
-x.Write 0
+' IF you need to get key/values by section name, do this:
+' vLine(0=Section, 1=Key, 2=Value, 3=Line, 4=Comment, 5=DefineSectionBool)
+For Each vLine In ini.GetLinesBySection("general")
+	' index 1 is key name
+	' index 2 is value
+	If "" <> vLine(1) Then
+		' display it like this: key=value
+		MsgBox vLine(1) & "=" & vLine(2)
+	End If
+Next
+
+' To save opened file:
+' Write 0
+' To save in new file:
+' Write "newfile.ini"
+ini.Write 0
 ```
