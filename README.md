@@ -14,10 +14,10 @@ ini.SetValue "general", "key1", "value1"
 ini.SetValue "general", "key1", "value12"
 
 ' retrieve value by key "a" from section "general"
-WScript.Echo "Get value:" & vbNewLine & x.GetValue("general", "a")
+WScript.Echo "Get value:" & vbNewLine & ini.GetValue("general", "a")
 ' here we list all sections,
 ' includes empty section name if there was no first section name
-WScript.Echo "Sections:" & vbNewLine & Join(x.GetSections(), ",")
+WScript.Echo "Sections:" & vbNewLine & Join(ini.GetSections(), ",")
 
 ' IF you need to get key/values by section name, do this:
 ' vLine(0=Section, 1=Key, 2=Value, 3=Line, 4=Comment, 5=DefineSectionBool)
