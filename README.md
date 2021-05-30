@@ -1,4 +1,6 @@
 # ini
+I was looking for .ini read/write library but I didn't find anything useful, decided I then to write own version
+This library will preserve comments, or any typos, and parsing ini file will also parse `[section]dasdsa` properly, and upon writing the `dasdsa` will be preserved.
 
 ```vb
 Set x = new IniFile
@@ -6,6 +8,7 @@ x.Open "test.ini"
 
 ' set/add values to ini
 x.SetValue "general", "key1", "value1"
+' then we assign new value
 x.SetValue "general", "key1", "value12"
 
 ' retrieve value by key "a" from section "general"
