@@ -205,4 +205,3 @@ Class IniFile
 		vStream.WriteText aData : vStream.SaveToFile aFilename, 2
 	End Function
 End Class
-
