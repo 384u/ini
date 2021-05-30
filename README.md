@@ -4,6 +4,7 @@ This library will preserve comments, or any typos, and parsing ini file will als
 ## Coding Style
 The Library uses quite "odd" naming style, but is a new standard I started applying in order for me to flawlessly convert the code into another language without worrying about forbidden words as variable name, and the standard is used so it brings more understanding what the code does.
 
+## All usage examples
 ```vb
 Set x = new IniFile
 x.Open "test.ini"
