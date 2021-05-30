@@ -1,6 +1,8 @@
-# ini
+# INI Read/Write Library (License: WTFPL)
 I was looking for .ini read/write library but I didn't find anything useful, decided I then to write own version
-This library will preserve comments, or any typos, and parsing ini file will also parse `[section]dasdsa` properly, and upon writing the `dasdsa` will be preserved.
+This library will preserve comments, or any typos, and parsing ini file will also parse `[section]dasdsa` properly, and upon writing, `dasdsa` will also be preserved.
+## Coding Style
+The Library uses quite "odd" naming style, but is a new standard I started applying in order for me to flawlessly convert the code into another language without worrying about forbidden words as variable name, and the standard is used so it brings more understanding what the code does.
 
 ```vb
 Set x = new IniFile
